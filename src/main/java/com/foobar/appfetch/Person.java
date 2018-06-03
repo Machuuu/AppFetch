@@ -1,8 +1,9 @@
 package com.foobar.appfetch;
 
 public class Person {
-    long id;
-    String name;
+
+    private long id;
+    private String name;
 
     public Person() {
 
