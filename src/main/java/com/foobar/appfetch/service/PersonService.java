@@ -26,7 +26,15 @@ public class PersonService {
     }
 
     public Person setPerson(Person person) {
-        return repo.save(person);
+        if (person != null) {
+            if (person.getName() == null || person.getName().isEmpty()) {
+                throw new NullPointerException("Unable to parse name!");
+            }
+            return repo.save(person);
+        }
+        else{
+            throw new NullPointerException("Person is null!");
+        }
     }
 
     public Iterable<Person> getAllPerson() {
