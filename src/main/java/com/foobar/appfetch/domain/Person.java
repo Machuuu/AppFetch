@@ -1,8 +1,15 @@
-package com.foobar.appfetch;
+package com.foobar.appfetch.domain;
+import javax.persistence.*;
 
+@Entity
 public class Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private long id;
+
+    @Column(name = "name", nullable = false)
     private String name;
 
     public Person() {
